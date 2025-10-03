@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources;
+namespace Buderdene\FilamentWidget\Resources;
 
 use BackedEnum;
 use Filament\Forms;
@@ -13,9 +13,9 @@ use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
-use Stephenjude\FilamentBlog\Models\Category;
-use Stephenjude\FilamentBlog\Resources\CategoryResource\Pages;
-use Stephenjude\FilamentBlog\Traits\HasContentEditor;
+use Buderdene\FilamentWidget\Models\Category;
+use Buderdene\FilamentWidget\Resources\CategoryResource\Pages;
+use Buderdene\FilamentWidget\Traits\HasContentEditor;
 use UnitEnum;
 
 class CategoryResource extends Resource
@@ -24,11 +24,11 @@ class CategoryResource extends Resource
 
     protected static ?string $model = Category::class;
 
-    protected static ?string $slug = 'blog/categories';
+    protected static ?string $slug = 'widget/categories';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string | null | UnitEnum $navigationGroup = 'Blog';
+    protected static string | null | UnitEnum $navigationGroup = 'widget';
 
     protected static string | null | BackedEnum $navigationIcon = 'heroicon-o-list-bullet';
 
@@ -41,7 +41,7 @@ class CategoryResource extends Resource
                 Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->label(__('filament-blog::filament-blog.name'))
+                            ->label(__('filament-widget::filament-widget.name'))
                             ->required()
                             ->live(true)
                             ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
@@ -52,12 +52,12 @@ class CategoryResource extends Resource
                                 $set('slug', Str::slug($state));
                             }),
                         Forms\Components\TextInput::make('slug')
-                            ->label(__('filament-blog::filament-blog.slug'))
+                            ->label(__('filament-widget::filament-widget.slug'))
                             ->required()
                             ->unique(Category::class, 'slug', fn ($record) => $record),
                         self::getContentEditor('description'),
                         Forms\Components\Toggle::make('is_visible')
-                            ->label(__('filament-blog::filament-blog.visible_to_guests'))
+                            ->label(__('filament-widget::filament-widget.visible_to_guests'))
                             ->default(true),
                     ])
                     ->columns([
@@ -68,11 +68,11 @@ class CategoryResource extends Resource
                     ->schema([
                         TextEntry::make('created_at')
                             ->default('—')
-                            ->label(__('filament-blog::filament-blog.created_at'))
+                            ->label(__('filament-widget::filament-widget.created_at'))
                             ->state(fn (?Category $record) => $record?->created_at?->diffForHumans()),
                         TextEntry::make('updated_at')
                             ->default('—')
-                            ->label(__('filament-blog::filament-blog.last_modified_at'))
+                            ->label(__('filament-widget::filament-widget.last_modified_at'))
                             ->state(fn (?Category $record) => $record?->updated_at?->diffForHumans()),
                     ])
                     ->columnSpan(1),
@@ -85,20 +85,20 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label(__('filament-blog::filament-blog.name'))
+                    ->label(__('filament-widget::filament-widget.name'))
                     ->searchable()
                     ->wrap()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('slug')
-                    ->label(__('filament-blog::filament-blog.slug'))
+                    ->label(__('filament-widget::filament-widget.slug'))
                     ->wrap()
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_visible')
                     ->boolean()
-                    ->label(__('filament-blog::filament-blog.visibility')),
+                    ->label(__('filament-widget::filament-widget.visibility')),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->label(__('filament-blog::filament-blog.last_updated'))
+                    ->label(__('filament-widget::filament-widget.last_updated'))
                     ->date(),
             ])
             ->filters([
@@ -124,11 +124,11 @@ class CategoryResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return __('filament-blog::filament-blog.categories');
+        return __('filament-widget::filament-widget.categories');
     }
 
     public static function getModelLabel(): string
     {
-        return __('filament-blog::filament-blog.category');
+        return __('filament-widget::filament-widget.category');
     }
 }

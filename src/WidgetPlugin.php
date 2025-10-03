@@ -1,16 +1,16 @@
 <?php
 
-namespace Stephenjude\FilamentBlog;
+namespace Buderdene\FilamentWidget;
 
 use Closure;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
-use Stephenjude\FilamentBlog\Resources\AuthorResource;
-use Stephenjude\FilamentBlog\Resources\CategoryResource;
-use Stephenjude\FilamentBlog\Resources\PostResource;
+use Buderdene\FilamentWidget\Resources\AuthorResource;
+use Buderdene\FilamentWidget\Resources\CategoryResource;
+use Buderdene\FilamentWidget\Resources\PostResource;
 
-class BlogPlugin implements Plugin
+class WidgetPlugin implements Plugin
 {
     use EvaluatesClosures;
 
@@ -35,7 +35,7 @@ class BlogPlugin implements Plugin
 
     public function getId(): string
     {
-        return 'filament-blog';
+        return 'filament-widget';
     }
 
     public function register(Panel $panel): void

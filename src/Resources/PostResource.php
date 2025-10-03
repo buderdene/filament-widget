@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources;
+namespace Buderdene\FilamentWidget\Resources;
 
 use BackedEnum;
 use Filament\Forms;
@@ -16,10 +16,10 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Stephenjude\FilamentBlog\Models\Category;
-use Stephenjude\FilamentBlog\Models\Post;
-use Stephenjude\FilamentBlog\Resources\PostResource\Pages;
-use Stephenjude\FilamentBlog\Traits\HasContentEditor;
+use Buderdene\FilamentWidget\Models\Category;
+use Buderdene\FilamentWidget\Models\Post;
+use Buderdene\FilamentWidget\Resources\PostResource\Pages;
+use Buderdene\FilamentWidget\Traits\HasContentEditor;
 use UnitEnum;
 
 use function now;
@@ -30,11 +30,11 @@ class PostResource extends Resource
 
     protected static ?string $model = Post::class;
 
-    protected static ?string $slug = 'blog/posts';
+    protected static ?string $slug = 'widget/posts';
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static string | null | UnitEnum $navigationGroup = 'Blog';
+    protected static string | null | UnitEnum $navigationGroup = 'widget';
 
     protected static string | null | BackedEnum $navigationIcon = 'heroicon-o-newspaper';
 
@@ -45,30 +45,30 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('banner')
-                    ->disk(config('filament-blog.banner.disk', 'public'))
-                    ->visibility(config('filament-blog.banner.visibility', 'public'))
-                    ->label(__('filament-blog::filament-blog.banner'))
+                    ->disk(config('filament-widget.banner.disk', 'public'))
+                    ->visibility(config('filament-widget.banner.visibility', 'public'))
+                    ->label(__('filament-widget::filament-widget.banner'))
                     ->circular(),
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('filament-blog::filament-blog.title'))
+                    ->label(__('filament-widget::filament-widget.title'))
                     ->searchable()
                     ->wrap()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('author.name')
-                    ->label(__('filament-blog::filament-blog.author_name'))
+                    ->label(__('filament-widget::filament-widget.author_name'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('category.name')
-                    ->label(__('filament-blog::filament-blog.category_name'))
+                    ->label(__('filament-widget::filament-widget.category_name'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('published_at')
-                    ->label(__('filament-blog::filament-blog.published_at'))
+                    ->label(__('filament-widget::filament-widget.published_at'))
                     ->date()
                     ->sortable(),
             ])->defaultSort(
-                config('filament-blog.sort.column', 'published_at'),
-                config('filament-blog.sort.direction', 'asc')
+                config('filament-widget.sort.column', 'published_at'),
+                config('filament-widget.sort.direction', 'asc')
             )
             ->filters([
                 Tables\Filters\Filter::make('published_at')
@@ -99,7 +99,7 @@ class PostResource extends Resource
                 Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('title')
-                            ->label(__('filament-blog::filament-blog.title'))
+                            ->label(__('filament-widget::filament-widget.title'))
                             ->required()
                             ->live(true)
                             ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
@@ -111,12 +111,12 @@ class PostResource extends Resource
                             }),
 
                         Forms\Components\TextInput::make('slug')
-                            ->label(__('filament-blog::filament-blog.slug'))
+                            ->label(__('filament-widget::filament-widget.slug'))
                             ->required()
                             ->unique(Post::class, 'slug', fn ($record) => $record),
 
                         Forms\Components\Textarea::make('excerpt')
-                            ->label(__('filament-blog::filament-blog.excerpt'))
+                            ->label(__('filament-widget::filament-widget.excerpt'))
                             ->rows(2)
                             ->minLength(50)
                             ->maxLength(1000)
@@ -125,21 +125,21 @@ class PostResource extends Resource
                             ]),
 
                         Forms\Components\FileUpload::make('banner')
-                            ->label(__('filament-blog::filament-blog.banner'))
+                            ->label(__('filament-widget::filament-widget.banner'))
                             ->image()
-                            ->maxSize(config('filament-blog.banner.maxSize', 5120))
-                            ->imageCropAspectRatio(config('filament-blog.banner.cropAspectRatio', '16:9'))
-                            ->disk(config('filament-blog.banner.disk', 'public'))
-                            ->visibility(config('filament-blog.banner.visibility', 'public'))
-                            ->directory(config('filament-blog.banner.directory', 'blog'))
+                            ->maxSize(config('filament-widget.banner.maxSize', 5120))
+                            ->imageCropAspectRatio(config('filament-widget.banner.cropAspectRatio', '16:9'))
+                            ->disk(config('filament-widget.banner.disk', 'public'))
+                            ->visibility(config('filament-widget.banner.visibility', 'public'))
+                            ->directory(config('filament-widget.banner.directory', 'widget'))
                             ->columnSpan([
                                 'sm' => 2,
                             ]),
 
                         self::getContentEditor('content'),
 
-                        Forms\Components\Select::make('blog_author_id')
-                            ->label(__('filament-blog::filament-blog.author'))
+                        Forms\Components\Select::make('widget_author_id')
+                            ->label(__('filament-widget::filament-widget.author'))
                             ->relationship(name: 'author', titleAttribute: 'name')
                             ->createOptionForm([
                                 Forms\Components\TextInput::make('name')
@@ -152,15 +152,15 @@ class PostResource extends Resource
                             ->searchable()
                             ->required(),
 
-                        Forms\Components\Select::make('blog_category_id')
-                            ->label(__('filament-blog::filament-blog.category'))
+                        Forms\Components\Select::make('widget_category_id')
+                            ->label(__('filament-widget::filament-widget.category'))
                             ->relationship(name: 'category', titleAttribute: 'name')
                             ->searchable()
                             ->preload()
                             ->required()
                             ->createOptionForm([
                                 Forms\Components\TextInput::make('name')
-                                    ->label(__('filament-blog::filament-blog.name'))
+                                    ->label(__('filament-widget::filament-widget.name'))
                                     ->required()
                                     ->live(true)
                                     ->afterStateUpdated(function (Get $get, Set $set, ?string $old, ?string $state) {
@@ -171,19 +171,19 @@ class PostResource extends Resource
                                         $set('slug', Str::slug($state));
                                     }),
                                 Forms\Components\TextInput::make('slug')
-                                    ->label(__('filament-blog::filament-blog.slug'))
+                                    ->label(__('filament-widget::filament-widget.slug'))
                                     ->required()
                                     ->unique(Category::class, 'slug', fn ($record) => $record),
                                 self::getContentEditor('description'),
                                 Forms\Components\Toggle::make('is_visible')
-                                    ->label(__('filament-blog::filament-blog.visible_to_guests'))
+                                    ->label(__('filament-widget::filament-widget.visible_to_guests'))
                                     ->default(true),
                             ]),
 
                         Forms\Components\DatePicker::make('published_at')
-                            ->label(__('filament-blog::filament-blog.published_date')),
+                            ->label(__('filament-widget::filament-widget.published_date')),
                         SpatieTagsInput::make('tags')
-                            ->label(__('filament-blog::filament-blog.tags')),
+                            ->label(__('filament-widget::filament-widget.tags')),
                     ])
                     ->columns([
                         'sm' => 2,
@@ -193,11 +193,11 @@ class PostResource extends Resource
                     ->schema([
                         TextEntry::make('created_at')
                             ->default('—')
-                            ->label(__('filament-blog::filament-blog.created_at'))
+                            ->label(__('filament-widget::filament-widget.created_at'))
                             ->state(fn (?Post $record) => $record?->created_at?->diffForHumans()),
                         TextEntry::make('updated_at')
                             ->default('—')
-                            ->label(__('filament-blog::filament-blog.last_modified_at'))
+                            ->label(__('filament-widget::filament-widget.last_modified_at'))
                             ->state(fn (?Post $record) => $record?->updated_at?->diffForHumans()),
                     ])
                     ->columnSpan(1),
@@ -249,11 +249,11 @@ class PostResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return __('filament-blog::filament-blog.posts');
+        return __('filament-widget::filament-widget.posts');
     }
 
     public static function getModelLabel(): string
     {
-        return __('filament-blog::filament-blog.post');
+        return __('filament-widget::filament-widget.post');
     }
 }

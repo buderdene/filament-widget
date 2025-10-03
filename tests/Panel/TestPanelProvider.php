@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Tests\Panel;
+namespace Buderdene\FilamentWidget\Tests\Panel;
 
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -13,7 +13,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Stephenjude\FilamentBlog\BlogPlugin;
+use Buderdene\FilamentWidget\widgetPlugin;
 
 class TestPanelProvider extends PanelProvider
 {
@@ -22,7 +22,7 @@ class TestPanelProvider extends PanelProvider
         return $panel
             ->id('test-panel')
             ->default()
-            ->plugin(BlogPlugin::make())
+            ->plugin(widgetPlugin::make())
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

@@ -1,20 +1,20 @@
 <?php
 
-namespace Stephenjude\FilamentBlog;
+namespace Buderdene\FilamentWidget;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Stephenjude\FilamentBlog\Commands\InstallCommand;
+use Buderdene\FilamentWidget\Commands\InstallCommand;
 
-class BlogServiceProvider extends PackageServiceProvider
+class WidgetServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-blog')
+            ->name('filament-widget')
             ->hasConfigFile()
             ->hasTranslations()
             ->hasCommand(InstallCommand::class)
-            ->hasMigration('create_filament_blog_tables');
+            ->hasMigration('create_filament_widget_tables');
     }
 }

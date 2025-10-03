@@ -1,7 +1,7 @@
 <?php
 
-use Stephenjude\FilamentBlog\Models\Author;
-use Stephenjude\FilamentBlog\Resources\AuthorResource;
+use Buderdene\FilamentWidget\Models\Author;
+use Buderdene\FilamentWidget\Resources\AuthorResource;
 
 use function Pest\Livewire\livewire;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Tests\Database\Factories;
+namespace Buderdene\FilamentWidget\Tests\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Stephenjude\FilamentBlog\Models\Category;
+use Buderdene\FilamentWidget\Models\Category;
 
 class CategoryFactory extends Factory
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Tests\Models;
+namespace Buderdene\FilamentWidget\Tests\Models;
 
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Stephenjude\FilamentBlog\Tests\Database\Factories\UserFactory;
+use Buderdene\FilamentWidget\Tests\Database\Factories\UserFactory;
 
 class User extends Authenticatable implements FilamentUser
 {

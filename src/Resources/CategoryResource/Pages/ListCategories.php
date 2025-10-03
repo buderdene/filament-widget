@@ -1,10 +1,10 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources\CategoryResource\Pages;
+namespace Buderdene\FilamentWidget\Resources\CategoryResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Stephenjude\FilamentBlog\Resources\CategoryResource;
+use Buderdene\FilamentWidget\Resources\CategoryResource;
 
 class ListCategories extends ListRecords
 {

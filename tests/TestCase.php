@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Tests;
+namespace Buderdene\FilamentWidget\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
@@ -20,9 +20,9 @@ use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 use Spatie\Tags\TagsServiceProvider;
-use Stephenjude\FilamentBlog\BlogServiceProvider;
-use Stephenjude\FilamentBlog\Tests\Models\User;
-use Stephenjude\FilamentBlog\Tests\Panel\TestPanelProvider;
+use Buderdene\FilamentWidget\widgetServiceProvider;
+use Buderdene\FilamentWidget\Tests\Models\User;
+use Buderdene\FilamentWidget\Tests\Panel\TestPanelProvider;
 
 class TestCase extends Orchestra
 {
@@ -36,7 +36,7 @@ class TestCase extends Orchestra
         $this->actingAs(User::factory()->create());
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Stephenjude\\FilamentBlog\\Tests\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Buderdene\\FilamentWidget\\Tests\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
 
     }
@@ -58,7 +58,7 @@ class TestCase extends Orchestra
             WidgetsServiceProvider::class,
             TagsServiceProvider::class,
 
-            BlogServiceProvider::class,
+            widgetServiceProvider::class,
 
             TestPanelProvider::class,
         ];

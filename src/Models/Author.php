@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Models;
+namespace Buderdene\FilamentWidget\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
 
 /**
- * Stephenjude\FilamentBlog\Models\Author
+ * Buderdene\FilamentWidget\Models\Author
  *
  * @property string $name
  * @property ?string $email
@@ -27,7 +27,7 @@ class Author extends Model
     /**
      * @var string
      */
-    protected $table = 'blog_authors';
+    protected $table = 'widget_authors';
 
     /**
      * @var array<int, string>
@@ -55,6 +55,6 @@ class Author extends Model
 
     public function posts(): HasMany
     {
-        return $this->hasMany(Post::class, 'blog_author_id');
+        return $this->hasMany(Post::class, 'widget_author_id');
     }
 }

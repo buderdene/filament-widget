@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Str;
-use Stephenjude\FilamentBlog\Models\Author;
-use Stephenjude\FilamentBlog\Models\Post;
-use Stephenjude\FilamentBlog\Resources\PostResource;
+use Buderdene\FilamentWidget\Models\Author;
+use Buderdene\FilamentWidget\Models\Post;
+use Buderdene\FilamentWidget\Resources\PostResource;
 
 use function Pest\Livewire\livewire;
 
@@ -27,8 +27,8 @@ it('can create', function () {
             'title' => $newData->title,
             'excerpt' => $newData->excerpt,
             'content' => $newData->content,
-            'blog_author_id' => $newData->author->getKey(),
-            'blog_category_id' => $newData->category->getKey(),
+            'widget_author_id' => $newData->author->getKey(),
+            'widget_category_id' => $newData->category->getKey(),
         ])
         ->assertFormSet([
             'slug' => Str::slug($newData->title),
@@ -41,8 +41,8 @@ it('can create', function () {
         'slug' => $newData->slug,
         'excerpt' => $newData->excerpt,
         'content' => $newData->content,
-        'blog_author_id' => $newData->author->getKey(),
-        'blog_category_id' => $newData->category->getKey(),
+        'widget_author_id' => $newData->author->getKey(),
+        'widget_category_id' => $newData->category->getKey(),
     ]);
 });
 

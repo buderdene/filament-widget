@@ -1,17 +1,17 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Traits;
+namespace Buderdene\FilamentWidget\Traits;
 
 trait HasContentEditor
 {
     public static function getContentEditor(string $field)
     {
-        $defaultEditor = config('filament-blog.editor');
+        $defaultEditor = config('filament-widget.editor');
 
         return $defaultEditor::make($field)
-            ->label(__('filament-blog::filament-blog.content'))
+            ->label(__('filament-widget::filament-widget.content'))
             ->required()
-            ->toolbarButtons(config('filament-blog.toolbar_buttons'))
+            ->toolbarButtons(config('filament-widget.toolbar_buttons'))
             ->columnSpan([
                 'sm' => 2,
             ]);

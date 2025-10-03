@@ -1,18 +1,18 @@
 {
-    "name": "stephenjude/filament-blog",
-    "description": "Filament Blog Builder",
+    "name": "Buderdene/filament-widget",
+    "description": "Filament widget Builder",
     "keywords": [
-        "stephenjude",
+        "Buderdene",
         "laravel",
-        "filament-blog",
-        "blog"
+        "filament-widget",
+        "widget"
     ],
-    "homepage": "https://github.com/stephenjude/filament-blog",
+    "homepage": "https://github.com/Buderdene/filament-widget",
     "license": "MIT",
     "authors": [
         {
-            "name": "stephenjude",
-            "email": "stephenjudesuccess@gmail.com",
+            "name": "Buderdene",
+            "email": "Buderdenesuccess@gmail.com",
             "role": "Developer"
         }
     ],
@@ -33,13 +33,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Stephenjude\\FilamentBlog\\": "src"
+            "Buderdene\\FilamentWidget\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Stephenjude\\FilamentBlog\\Tests\\": "tests",
-            "Stephenjude\\FilamentBlog\\Tests\\Database\\Factories\\": "tests/database/factories"
+            "Buderdene\\FilamentWidget\\Tests\\": "tests",
+            "Buderdene\\FilamentWidget\\Tests\\Database\\Factories\\": "tests/database/factories"
         }
     },
     "scripts": {
@@ -59,7 +59,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Stephenjude\\FilamentBlog\\BlogServiceProvider"
+                "Buderdene\\FilamentWidget\\widgetServiceProvider"
             ]
         }
     },

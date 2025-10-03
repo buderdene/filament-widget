@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Commands;
+namespace Buderdene\FilamentWidget\Commands;
 
 use Illuminate\Console\Command;
 
@@ -11,14 +11,14 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'filament-blog:install';
+    protected $signature = 'filament-widget:install';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install all of the blog resources';
+    protected $description = 'Install all of the widget resources';
 
     /**
      * Create a new command instance.
@@ -37,14 +37,14 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        $this->comment('Publishing Blog Configuration...');
-        $this->callSilent('vendor:publish', ['--tag' => 'filament-blog-config']);
+        $this->comment('Publishing widget Configuration...');
+        $this->callSilent('vendor:publish', ['--tag' => 'filament-widget-config']);
 
-        $this->comment('Publishing Filament Blog Migrations...');
-        $this->callSilent('vendor:publish', ['--tag' => 'filament-blog-migrations']);
+        $this->comment('Publishing Filament widget Migrations...');
+        $this->callSilent('vendor:publish', ['--tag' => 'filament-widget-migrations']);
         $this->callSilent('vendor:publish', ['--tag' => 'tags-migrations']);
 
-        $this->info('Filament blog was installed successfully.');
+        $this->info('Filament widget was installed successfully.');
 
         return 0;
     }

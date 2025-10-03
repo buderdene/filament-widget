@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Str;
-use Stephenjude\FilamentBlog\Models\Category;
-use Stephenjude\FilamentBlog\Resources\CategoryResource;
+use Buderdene\FilamentWidget\Models\Category;
+use Buderdene\FilamentWidget\Resources\CategoryResource;
 
 use function Pest\Livewire\livewire;
 

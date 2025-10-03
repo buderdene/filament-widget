@@ -1,5 +1,5 @@
 <?php
 
-use Stephenjude\FilamentBlog\Tests\TestCase;
+use Buderdene\FilamentWidget\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

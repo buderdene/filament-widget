@@ -16,7 +16,7 @@ return [
      */
     'banner' => [
         'disk' => 'public',
-        'directory' => 'blog',
+        'directory' => 'widget',
         'maxSize' => 5120,
         'cropAspectRatio' => '16:9',
         'visibility' => 'public',
@@ -38,7 +38,7 @@ return [
      */
     'avatar' => [
         'disk' => 'public',
-        'directory' => 'blog',
+        'directory' => 'widget',
         'maxSize' => 5120,
         'visibility' => 'public',
     ],

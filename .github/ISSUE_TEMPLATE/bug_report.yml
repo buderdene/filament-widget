@@ -11,10 +11,10 @@ body:
 
         Thank you for taking the time to file a bug report. To address this bug as fast as possible, we need some information.
   - type: input
-    id: blog-version
+    id: widget-version
     attributes:
-      label: Filament Blog Version
-      description: Please provide the full version of the Filament-Blog you have installed.
+      label: Filament widget Version
+      description: Please provide the full version of the filament-widget you have installed.
       placeholder: v0.1.6
     validations:
       required: true

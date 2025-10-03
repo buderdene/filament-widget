@@ -1,9 +1,9 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources\CategoryResource\Pages;
+namespace Buderdene\FilamentWidget\Resources\CategoryResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Stephenjude\FilamentBlog\Resources\CategoryResource;
+use Buderdene\FilamentWidget\Resources\CategoryResource;
 
 class CreateCategory extends CreateRecord
 {

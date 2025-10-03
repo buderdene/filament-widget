@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Models;
+namespace Buderdene\FilamentWidget\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * Stephenjude\FilamentBlog\Models\Category
+ * Buderdene\FilamentWidget\Models\Category
  *
  * @property string $name
  * @property string $slug
@@ -29,7 +29,7 @@ class Category extends Model
     /**
      * @var string
      */
-    protected $table = 'blog_categories';
+    protected $table = 'widget_categories';
 
     /**
      * @var array<int, string>
@@ -50,7 +50,7 @@ class Category extends Model
 
     public function posts(): HasMany
     {
-        return $this->hasMany(Post::class, 'blog_category_id', 'id');
+        return $this->hasMany(Post::class, 'widget_category_id', 'id');
     }
 
     /**

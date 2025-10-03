@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources;
+namespace Buderdene\FilamentWidget\Resources;
 
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
@@ -11,9 +11,9 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Stephenjude\FilamentBlog\Models\Author;
-use Stephenjude\FilamentBlog\Resources\AuthorResource\Pages;
-use Stephenjude\FilamentBlog\Traits\HasContentEditor;
+use Buderdene\FilamentWidget\Models\Author;
+use Buderdene\FilamentWidget\Resources\AuthorResource\Pages;
+use Buderdene\FilamentWidget\Traits\HasContentEditor;
 use UnitEnum;
 
 class AuthorResource extends Resource
@@ -22,11 +22,11 @@ class AuthorResource extends Resource
 
     protected static ?string $model = Author::class;
 
-    protected static ?string $slug = 'blog/authors';
+    protected static ?string $slug = 'widget/authors';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string | null | UnitEnum $navigationGroup = 'Blog';
+    protected static string | null | UnitEnum $navigationGroup = 'widget';
 
     protected static string | null | BackedEnum $navigationIcon = 'heroicon-o-users';
 
@@ -39,28 +39,28 @@ class AuthorResource extends Resource
                 Section::make()
                     ->schema([
                         TextInput::make('name')
-                            ->label(__('filament-blog::filament-blog.name'))
+                            ->label(__('filament-widget::filament-widget.name'))
                             ->required(),
                         TextInput::make('email')
-                            ->label(__('filament-blog::filament-blog.email'))
+                            ->label(__('filament-widget::filament-widget.email'))
                             ->required()
                             ->email()
                             ->unique(Author::class, 'email', fn ($record) => $record),
                         FileUpload::make('photo')
-                            ->label(__('filament-blog::filament-blog.photo'))
+                            ->label(__('filament-widget::filament-widget.photo'))
                             ->image()
-                            ->disk(config('filament-blog.avatar.disk', 'public'))
-                            ->visibility(config('filament-blog.avatar.visibility', 'public'))
-                            ->maxSize(config('filament-blog.avatar.maxSize', 5120))
-                            ->directory(config('filament-blog.avatar.directory', 'blog'))
+                            ->disk(config('filament-widget.avatar.disk', 'public'))
+                            ->visibility(config('filament-widget.avatar.visibility', 'public'))
+                            ->maxSize(config('filament-widget.avatar.maxSize', 5120))
+                            ->directory(config('filament-widget.avatar.directory', 'widget'))
                             ->columnSpan([
                                 'sm' => 2,
                             ]),
                         self::getContentEditor('bio'),
                         TextInput::make('github_handle')
-                            ->label(__('filament-blog::filament-blog.github')),
+                            ->label(__('filament-widget::filament-widget.github')),
                         TextInput::make('twitter_handle')
-                            ->label(__('filament-blog::filament-blog.twitter')),
+                            ->label(__('filament-widget::filament-widget.twitter')),
                     ])
                     ->columns([
                         'sm' => 2,
@@ -70,11 +70,11 @@ class AuthorResource extends Resource
                     ->schema([
                         TextEntry::make('created_at')
                             ->default('—')
-                            ->label(__('filament-blog::filament-blog.created_at'))
+                            ->label(__('filament-widget::filament-widget.created_at'))
                             ->state(fn (?Author $record) => $record?->created_at?->diffForHumans()),
                         TextEntry::make('updated_at')
                             ->default('—')
-                            ->label(__('filament-blog::filament-blog.last_modified_at'))
+                            ->label(__('filament-widget::filament-widget.last_modified_at'))
                             ->state(fn (?Author $record) => $record?->updated_at?->diffForHumans()),
                     ])
                     ->columnSpan(1),
@@ -87,23 +87,23 @@ class AuthorResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('photo')
-                    ->disk(config('filament-blog.avatar.disk', 'public'))
-                    ->visibility(config('filament-blog.banner.visibility', 'public'))
-                    ->label(__('filament-blog::filament-blog.photo'))
+                    ->disk(config('filament-widget.avatar.disk', 'public'))
+                    ->visibility(config('filament-widget.banner.visibility', 'public'))
+                    ->label(__('filament-widget::filament-widget.photo'))
                     ->circular(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label(__('filament-blog::filament-blog.name'))
+                    ->label(__('filament-widget::filament-widget.name'))
                     ->searchable()
                     ->wrap()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')
-                    ->label(__('filament-blog::filament-blog.email'))
+                    ->label(__('filament-widget::filament-widget.email'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('github_handle')
-                    ->label(__('filament-blog::filament-blog.github')),
+                    ->label(__('filament-widget::filament-widget.github')),
                 Tables\Columns\TextColumn::make('twitter_handle')
-                    ->label(__('filament-blog::filament-blog.twitter')),
+                    ->label(__('filament-widget::filament-widget.twitter')),
             ])
             ->filters([
                 //
@@ -128,11 +128,11 @@ class AuthorResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return __('filament-blog::filament-blog.authors');
+        return __('filament-widget::filament-widget.authors');
     }
 
     public static function getModelLabel(): string
     {
-        return __('filament-blog::filament-blog.author');
+        return __('filament-widget::filament-widget.author');
     }
 }

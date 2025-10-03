@@ -1,15 +1,15 @@
-![](https://raw.githubusercontent.com/stephenjude/filament-blog/main/art/banner.jpg)
+![](https://raw.githubusercontent.com/Buderdene/filament-widget/main/art/banner.jpg)
 
-# Filament Blog Builder
+# Filament widget Builder
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/stephenjude/filament-blog.svg)](https://packagist.org/packages/stephenjude/filament-blog)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/stephenjude/filament-blog/run-tests.yml?branch=main&label=tests)](https://github.com/stephenjude/filament-blog/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/stephenjude/filament-blog/fix-php-code-style-issues.yml?branch-main&label=code%20style)](https://github.com/stephenjude/filament-blog/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/stephenjude/filament-blog.svg?style=flat-square)](https://packagist.org/packages/stephenjude/filament-blog)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/Buderdene/filament-widget.svg)](https://packagist.org/packages/Buderdene/filament-widget)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/Buderdene/filament-widget/run-tests.yml?branch=main&label=tests)](https://github.com/Buderdene/filament-widget/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/Buderdene/filament-widget/fix-php-code-style-issues.yml?branch-main&label=code%20style)](https://github.com/Buderdene/filament-widget/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/Buderdene/filament-widget.svg?style=flat-square)](https://packagist.org/packages/Buderdene/filament-widget)
 
-A faceless blog content manager with configurable richtext and markdown support for a filament admin panel.
+A faceless widget content manager with configurable richtext and markdown support for a filament admin panel.
 
-![](https://raw.githubusercontent.com/stephenjude/filament-blog/main/art/screen1.png)
+![](https://raw.githubusercontent.com/Buderdene/filament-widget/main/art/screen1.png)
 
 ## Filament Admin Panel
 
@@ -28,9 +28,9 @@ Laravel: `10`
 You can install the package via composer:
 
 ```bash
-composer require stephenjude/filament-blog
+composer require Buderdene/filament-widget
 
-php artisan filament-blog:install
+php artisan filament-widget:install
 
 php artisan storage:link
 
@@ -45,7 +45,7 @@ public function panel(Panel $panel): Panel
     return $panel
         ...
         ->plugin(
-            Stephenjude\FilamentBlog\BlogPlugin::make()
+            Buderdene\FilamentWidget\widgetPlugin::make()
         );
 }
 ```
@@ -54,7 +54,7 @@ public function panel(Panel $panel): Panel
 You can authorize the plugin for users with a specific role/permission:
 
 ```php
-\Stephenjude\FilamentBlog\BlogPlugin::make()
+\Buderdene\FilamentWidget\widgetPlugin::make()
     ->authorizePost(fn() => auth()->user()->can('edit.posts'));
     ->authorizeAuthor(fn() => auth()->user()->can('edit.authors'));
     ->authorizeCategory(fn() => auth()->user()->can('edit.category'));
@@ -62,11 +62,11 @@ You can authorize the plugin for users with a specific role/permission:
 
 ## Displaying your content
 
-Filament blog builder is faceless, it doesn't have any opinions on how you display your content in your frontend. You can use the blog models in your controllers to display the different resources:
+Filament widget builder is faceless, it doesn't have any opinions on how you display your content in your frontend. You can use the widget models in your controllers to display the different resources:
 
--   `Stephenjude\FilamentBlog\Models\Post`
--   `Stephenjude\FilamentBlog\Models\Author`
--   `Stephenjude\FilamentBlog\Models\Category`
+-   `Buderdene\FilamentWidget\Models\Post`
+-   `Buderdene\FilamentWidget\Models\Author`
+-   `Buderdene\FilamentWidget\Models\Category`
 
 ### Posts & Drafts
 
@@ -167,11 +167,11 @@ return [
 
 ## More Screenshots
 
-![](https://raw.githubusercontent.com/stephenjude/filament-blog/main/art/screen2.png)
+![](https://raw.githubusercontent.com/Buderdene/filament-widget/main/art/screen2.png)
 
 ---
 
-![](https://raw.githubusercontent.com/stephenjude/filament-blog/main/art/screen3.png)
+![](https://raw.githubusercontent.com/Buderdene/filament-widget/main/art/screen3.png)
 
 ## Testing
 
@@ -193,7 +193,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
--   [stephenjude](https://github.com/stephenjude)
+-   [Buderdene](https://github.com/Buderdene)
 -   [All Contributors](../../contributors)
 
 ## License

@@ -1,9 +1,9 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources\AuthorResource\Pages;
+namespace Buderdene\FilamentWidget\Resources\AuthorResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Stephenjude\FilamentBlog\Resources\AuthorResource;
+use Buderdene\FilamentWidget\Resources\AuthorResource;
 
 class CreateAuthor extends CreateRecord
 {

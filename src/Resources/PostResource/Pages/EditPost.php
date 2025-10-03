@@ -1,10 +1,10 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources\PostResource\Pages;
+namespace Buderdene\FilamentWidget\Resources\PostResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Stephenjude\FilamentBlog\Resources\PostResource;
+use Buderdene\FilamentWidget\Resources\PostResource;
 
 class EditPost extends EditRecord
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Tests\Database\Factories;
+namespace Buderdene\FilamentWidget\Tests\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Stephenjude\FilamentBlog\Models\Author;
-use Stephenjude\FilamentBlog\Models\Category;
-use Stephenjude\FilamentBlog\Models\Post;
+use Buderdene\FilamentWidget\Models\Author;
+use Buderdene\FilamentWidget\Models\Category;
+use Buderdene\FilamentWidget\Models\Post;
 
 class PostFactory extends Factory
 {
@@ -23,8 +23,8 @@ class PostFactory extends Factory
             'content' => $this->faker->realText(),
             'excerpt' => $this->faker->realTextBetween(50, 1000),
             'published_at' => $this->faker->dateTimeBetween('-6 month', '+1 month'),
-            'blog_author_id' => Author::factory()->create(),
-            'blog_category_id' => Category::factory()->create(),
+            'widget_author_id' => Author::factory()->create(),
+            'widget_category_id' => Category::factory()->create(),
             'created_at' => $this->faker->dateTimeBetween('-1 year', '-6 month'),
             'updated_at' => $this->faker->dateTimeBetween('-5 month', 'now'),
         ];

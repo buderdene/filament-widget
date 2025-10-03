@@ -1,9 +1,9 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources\PostResource\Pages;
+namespace Buderdene\FilamentWidget\Resources\PostResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Stephenjude\FilamentBlog\Resources\PostResource;
+use Buderdene\FilamentWidget\Resources\PostResource;
 
 class CreatePost extends CreateRecord
 {

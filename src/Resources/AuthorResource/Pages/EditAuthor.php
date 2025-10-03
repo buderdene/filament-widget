@@ -1,10 +1,10 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Resources\AuthorResource\Pages;
+namespace Buderdene\FilamentWidget\Resources\AuthorResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Stephenjude\FilamentBlog\Resources\AuthorResource;
+use Buderdene\FilamentWidget\Resources\AuthorResource;
 
 class EditAuthor extends EditRecord
 {

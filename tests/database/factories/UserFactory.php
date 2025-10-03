@@ -1,10 +1,10 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Tests\Database\Factories;
+namespace Buderdene\FilamentWidget\Tests\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Stephenjude\FilamentBlog\Tests\Models\User;
+use Buderdene\FilamentWidget\Tests\Models\User;
 
 class UserFactory extends Factory
 {

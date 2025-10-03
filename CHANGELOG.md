@@ -1,40 +1,40 @@
 # Changelog
 
-All notable changes to `filament-blog` will be documented in this file.
+All notable changes to `filament-widget` will be documented in this file.
 
 ## 4.1.2 - 2025-08-28
 
 ### What's Changed
 
-* Allow instant category adding in PostResource by @cyberkishor in https://github.com/stephenjude/filament-blog/pull/75
+* Allow instant category adding in PostResource by @cyberkishor in https://github.com/Buderdene/filament-widget/pull/75
 
 ### New Contributors
 
-* @cyberkishor made their first contribution in https://github.com/stephenjude/filament-blog/pull/75
+* @cyberkishor made their first contribution in https://github.com/Buderdene/filament-widget/pull/75
 
-**Full Changelog**: https://github.com/stephenjude/filament-blog/compare/4.1.1...4.1.2
+**Full Changelog**: https://github.com/Buderdene/filament-widget/compare/4.1.1...4.1.2
 
 ## 4.1.1 - 2025-08-16
 
 ### What's Changed
 
-* Preload Post Categories & Authors by @stephenjude in https://github.com/stephenjude/filament-blog/pull/74
+* Preload Post Categories & Authors by @Buderdene in https://github.com/Buderdene/filament-widget/pull/74
 
-**Full Changelog**: https://github.com/stephenjude/filament-blog/compare/4.1.0...4.1.1
+**Full Changelog**: https://github.com/Buderdene/filament-widget/compare/4.1.0...4.1.1
 
 ## 4.1.0 - 2025-08-14
 
 ### What's Changed
 
-* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/stephenjude/filament-blog/pull/70
-* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/stephenjude/filament-blog/pull/71
-* Filament v4 Support by @stephenjude in https://github.com/stephenjude/filament-blog/pull/72
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/Buderdene/filament-widget/pull/70
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/Buderdene/filament-widget/pull/71
+* Filament v4 Support by @Buderdene in https://github.com/Buderdene/filament-widget/pull/72
 
 ### New Contributors
 
-* @stephenjude made their first contribution in https://github.com/stephenjude/filament-blog/pull/72
+* @Buderdene made their first contribution in https://github.com/Buderdene/filament-widget/pull/72
 
-**Full Changelog**: https://github.com/stephenjude/filament-blog/compare/4.0.3...4.1.0
+**Full Changelog**: https://github.com/Buderdene/filament-widget/compare/4.0.3...4.1.0
 
 ## 4.0.3 - 2025-06-17
 
@@ -43,43 +43,43 @@ All notable changes to `filament-blog` will be documented in this file.
 
 ### What's Changed
 
-* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot in https://github.com/stephenjude/filament-blog/pull/64
-* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot in https://github.com/stephenjude/filament-blog/pull/65
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot in https://github.com/Buderdene/filament-widget/pull/64
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot in https://github.com/Buderdene/filament-widget/pull/65
 
-**Full Changelog**: https://github.com/stephenjude/filament-blog/compare/4.0.2...4.0.3
+**Full Changelog**: https://github.com/Buderdene/filament-widget/compare/4.0.2...4.0.3
 
 ## 4.0.2 - 2025-04-28
 
 ### What's Changed
 
-* Quick Fix for Auto Generated slug problem by @attargah in https://github.com/stephenjude/filament-blog/pull/63
+* Quick Fix for Auto Generated slug problem by @attargah in https://github.com/Buderdene/filament-widget/pull/63
 
 ### New Contributors
 
-* @attargah made their first contribution in https://github.com/stephenjude/filament-blog/pull/63
+* @attargah made their first contribution in https://github.com/Buderdene/filament-widget/pull/63
 
-**Full Changelog**: https://github.com/stephenjude/filament-blog/compare/4.0.1...4.0.2
+**Full Changelog**: https://github.com/Buderdene/filament-widget/compare/4.0.1...4.0.2
 
 ## 4.0.1 - 2025-02-17
 
 ### What's Changed
 
-* Display Visibility for Private S3 Storage Images by @naowas in https://github.com/stephenjude/filament-blog/pull/62
+* Display Visibility for Private S3 Storage Images by @naowas in https://github.com/Buderdene/filament-widget/pull/62
 
 ### New Contributors
 
-* @naowas made their first contribution in https://github.com/stephenjude/filament-blog/pull/62
+* @naowas made their first contribution in https://github.com/Buderdene/filament-widget/pull/62
 
-**Full Changelog**: https://github.com/stephenjude/filament-blog/compare/4.0.0...4.0.1
+**Full Changelog**: https://github.com/Buderdene/filament-widget/compare/4.0.0...4.0.1
 
 ## 4.0.0 - 2025-02-17
 
 ### What's Changed
 
-* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/stephenjude/filament-blog/pull/59
-* Laravel 12.x Compatibility by @laravel-shift in https://github.com/stephenjude/filament-blog/pull/60
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/Buderdene/filament-widget/pull/59
+* Laravel 12.x Compatibility by @laravel-shift in https://github.com/Buderdene/filament-widget/pull/60
 
-**Full Changelog**: https://github.com/stephenjude/filament-blog/compare/3.0.1...4.0.0
+**Full Changelog**: https://github.com/Buderdene/filament-widget/compare/3.0.1...4.0.0
 
 ## 3.0.1 - 2025-01-28
 

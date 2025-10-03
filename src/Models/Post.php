@@ -1,6 +1,6 @@
 <?php
 
-namespace Stephenjude\FilamentBlog\Models;
+namespace Buderdene\FilamentWidget\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Spatie\Tags\HasTags;
 
 /**
- * Stephenjude\FilamentBlog\Models\Post
+ * Buderdene\FilamentWidget\Models\Post
  *
  * @property string $title
  * @property string $slug
@@ -32,7 +32,7 @@ class Post extends Model
     /**
      * @var string
      */
-    protected $table = 'blog_posts';
+    protected $table = 'widget_posts';
 
     /**
      * @var array<int, string>
@@ -44,8 +44,8 @@ class Post extends Model
         'banner',
         'content',
         'published_at',
-        'blog_author_id',
-        'blog_category_id',
+        'widget_author_id',
+        'widget_category_id',
     ];
 
     /**
@@ -79,11 +79,11 @@ class Post extends Model
 
     public function author(): BelongsTo
     {
-        return $this->belongsTo(Author::class, 'blog_author_id');
+        return $this->belongsTo(Author::class, 'widget_author_id');
     }
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class, 'blog_category_id');
+        return $this->belongsTo(Category::class, 'widget_category_id');
     }
 }

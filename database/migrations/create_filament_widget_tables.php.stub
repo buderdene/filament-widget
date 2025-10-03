@@ -12,7 +12,7 @@ return new class () extends Migration {
      */
     public function up()
     {
-        Schema::create('blog_categories', function (Blueprint $table) {
+        Schema::create('widget_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
@@ -21,7 +21,7 @@ return new class () extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('blog_authors', function (Blueprint $table) {
+        Schema::create('widget_authors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -32,10 +32,10 @@ return new class () extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('blog_posts', function (Blueprint $table) {
+        Schema::create('widget_posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('blog_author_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('blog_category_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('widget_author_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('widget_category_id')->nullable()->constrained()->nullOnDelete();
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('excerpt')->nullable();
@@ -53,8 +53,8 @@ return new class () extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('blog_posts');
-        Schema::dropIfExists('blog_categories');
-        Schema::dropIfExists('blog_authors');
+        Schema::dropIfExists('widget_posts');
+        Schema::dropIfExists('widget_categories');
+        Schema::dropIfExists('widget_authors');
     }
 };
