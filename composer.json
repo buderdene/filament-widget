@@ -1,18 +1,18 @@
 {
-    "name": "Buderdene/filament-widget",
+    "name": "buderdene/filament-widget",
     "description": "Filament widget Builder",
     "keywords": [
-        "Buderdene",
+        "buderdene",
         "laravel",
         "filament-widget",
         "widget"
     ],
-    "homepage": "https://github.com/Buderdene/filament-widget",
+    "homepage": "https://github.com/buderdene/filament-widget",
     "license": "MIT",
     "authors": [
         {
-            "name": "Buderdene",
-            "email": "Buderdenesuccess@gmail.com",
+            "name": "buderdene",
+            "email": "damdinsuren@coresoft.mn",
             "role": "Developer"
         }
     ],
